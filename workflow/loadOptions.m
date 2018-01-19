@@ -18,7 +18,7 @@ options.data.allowedFileTypes = {'.bmp', '.gif', '.jpg', '.jpeg', '.tif', '.tiff
 
 options.ffc = [];
 options.focusDetection = '';
-options.segmentation.name = 'cp_identify_primary';
+options.segmentation.name = 'cp_identify_objects';
 options.segmentation.pipe = fullfile(options.HCSWorkflowPath,'segmentation','pipelines','first_pipe.cppipe');
 options.segmentation.commands = {sprintf('python CellProfiler.py -c -r -i %s -o %s -p %s',...
                         options.data.focusedDataDir, options.data.segmentedDataDir, options.segmentation.pipe)};
