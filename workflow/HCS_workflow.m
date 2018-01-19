@@ -1,9 +1,12 @@
 %% main file 
 % prepare a GUI?
+global options;
 
 p = mfilename('fullpath');
 [HCSWorkflowPath,~,~] = fileparts(p);
-addpath(genpath(HCSWorkflowPath))
+addpath(genpath(HCSWorkflowPath));
+
+options.HCSWorkflowPath = HCSWorkflowPath;
 
 %% set options
 

@@ -1,7 +1,7 @@
 function flatFieldCorrection(options)
 % flat field correction
 
-fprintf('Flat field correction started...\n');
+fprintf('\n====================\nFlat field correction started...\n');
 
 if ~isfield(options,'ffc') || isempty(options.ffc)
     options.ffc.name = 'cidre';
@@ -35,7 +35,7 @@ elseif strcmp(options.ffc.name, 'mean')
     % run mean image computation based ffc
 end
 
-fprintf('Flat field correction DONE.\n');
+fprintf('\nFlat field correction DONE.\n');
 
 end
 
