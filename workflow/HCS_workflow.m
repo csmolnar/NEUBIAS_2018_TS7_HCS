@@ -9,6 +9,10 @@ addpath(genpath(HCSWorkflowPath))
 
 loadOptions();
 
+%% field of view image quality control
+
+filterOnImageQuality(options);
+
 %% flat field correction
 
 % a) CIDRE
