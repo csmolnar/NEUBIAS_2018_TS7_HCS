@@ -1,5 +1,7 @@
-function flatFieldCorrection(options)
+function flatFieldCorrection()
 % flat field correction
+
+global options;
 
 fprintf('\n====================\nFlat field correction started...\n');
 

@@ -12,16 +12,17 @@ options.HCSWorkflowPath = HCSWorkflowPath;
 
 loadOptions();
 
-%% field of view image quality control
+%% refactoring image names
 
-filterOnImageQuality(options);
+refactorImages();
+
 
 %% flat field correction
 
 % a) CIDRE
 % b) mean image estimation
 
-flatFieldCorrection(options);
+flatFieldCorrection();
 
 %% focus detection
 
@@ -29,7 +30,7 @@ flatFieldCorrection(options);
 % b) focus plane selection
 % c) extended depth of field?
 
-focusDetection(options);
+focusDetection();
 
 %% segmentation & feature extraction
 % showing CellProfiler GUI, run batch version
@@ -41,6 +42,16 @@ focusDetection(options);
 % - intensity features
 % - texture features
 
-segmentation(options);
+segmentation();
 
+if ~options.segmentation.isFeatureExtractionIncluded
+    featureExtraction();
+end
 
+%% field of view image quality control
+
+filterOnImageQuality();
+
+%% cell-level quality control
+
+filterOnSegmentationQuality(options);
