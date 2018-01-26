@@ -7,7 +7,7 @@ fprintf('\n====================\nFocus detection started...\n');
 
 % setting default focus detection method if it does not exist
 if ~isfield(options, 'focusDetection') || isempty(options.focusDetection)
-    options.focusDetection = 'adaptive';
+    options.focusDetection = 'bestplane';
 end
 
 switch options.focusDetection
