@@ -13,6 +13,7 @@ options.HCSWorkflowPath = HCSWorkflowPath;
 loadOptions();
 
 %% refactoring image names
+% convert image names to the SSS structure if necessary
 
 refactorImages();
 

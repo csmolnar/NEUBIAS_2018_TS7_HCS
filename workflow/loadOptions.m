@@ -4,11 +4,11 @@ fprintf('Loading options... ');
 
 global options;
 
-options.data.rawDataDir = 'd:\Projects\NEUBIAS\data\artificial\NEUBIAS_example_data_1_siRNA_screen_illuminated\';
+options.data.rawDataDir = 'D:\Projects\NEUBIAS\data\artificial\NEUBIAS_example_data_1_siRNA_screen_illuminated\';
 options.data.rawDataChannels = {'*DAPI.tif','*GFP.tif'};
-options.data.refactoredDataDir = 'd:\Projects\NEUBIAS\data\refactored\NEUBIAS_example_data_1_siRNA_screen_illuminated\';
+options.data.refactoredDataDir = 'd:\Projects\NEUBIAS\data\refactored\NEUBIAS_example_data_1_siRNA_screen\';
 options.data.correctedDataDir = 'd:\Projects\NEUBIAS\data\corrected\NEUBIAS_example_data_1_siRNA_screen_illuminated\';
-options.data.focusedDataDir = 'd:\Projects\NEUBIAS\data\focused\NEUBIAS_example_data_1_siRNA_screen_illuminated\';
+options.data.focusedDataDir = 'd:\Projects\NEUBIAS\data\focused\NEUBIAS_example_data_1_siRNA_screen\';
 options.data.segmentedDataDir = [];
 options.data.featuresDir = [];
 options.data.statisticsDir = [];
@@ -18,8 +18,9 @@ options.data.allowedFileTypes = {'.bmp', '.gif', '.jpg', '.jpeg', '.tif', '.tiff
 options.refactor.doRefactor = 0;
 options.refactor.inputFormat = [];
 options.refactor.outputFormat = '%s_w%c%02d_s%02d_p%02'; % SSS Structure
-                            
-options.ffc = [];
+                     
+options.ffc.name = 'cidre';
+options.ffc.vizualize = 1;
 
 options.focusDetection = '';
 

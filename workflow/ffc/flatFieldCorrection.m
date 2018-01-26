@@ -25,10 +25,17 @@ if strcmp(options.ffc.name, 'cidre')
             
         end
         
-        cidre(fullfile(options.data.rawDataDir, []), 'destination',options.data.correctedDataDir);
+        cidre(fullfile(options.data.rawDataDir, options.data.rawDataChannels{i}), 'destination',options.data.correctedDataDir);
         
         movefile(fullfile(options.data.correctedDataDir,'cidre_model.mat'),...
                  fullfile(options.data.correctedDataDir,['cidre_model_' baseName '.mat']));
+        if options.ffc.vizualize
+            load(fullfile(options.data.correctedDataDir,['cidre_model_' baseName '.mat']),'model');
+            figure;
+            subplot(1,2,1,'replace'); imagesc(model.v); colorbar; title('Gain (v)');
+            subplot(1,2,2,'replace'); imagesc(model.z); colorbar; title('Additive noise (z)');
+            clear model;
+        end
     end
     
     % TODO option for existing correction model
