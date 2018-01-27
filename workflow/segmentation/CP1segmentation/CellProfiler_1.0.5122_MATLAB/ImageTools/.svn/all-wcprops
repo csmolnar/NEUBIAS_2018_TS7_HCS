@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/cellprofiler/CellProfiler/!svn/ver/5025/trunk/CellProfiler/ImageTools
+END
+ShowOrHidePixelData.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/cellprofiler/CellProfiler/!svn/ver/5025/trunk/CellProfiler/ImageTools/ShowOrHidePixelData.m
+END
+ImageToolWindow.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/cellprofiler/CellProfiler/!svn/ver/5025/trunk/CellProfiler/ImageTools/ImageToolWindow.m
+END
+ShowHelpForThisMenu.m
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/cellprofiler/CellProfiler/!svn/ver/5025/trunk/CellProfiler/ImageTools/ShowHelpForThisMenu.m
+END
+OpenNewImageFile.m
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/cellprofiler/CellProfiler/!svn/ver/5025/trunk/CellProfiler/ImageTools/OpenNewImageFile.m
+END
+InteractiveZoom.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/cellprofiler/CellProfiler/!svn/ver/5025/trunk/CellProfiler/ImageTools/InteractiveZoom.m
+END

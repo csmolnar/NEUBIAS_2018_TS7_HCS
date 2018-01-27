@@ -4,11 +4,11 @@ fprintf('Loading options... ');
 
 global options;
 
-options.data.rawDataDir = 'D:\Projects\NEUBIAS\data\artificial\NEUBIAS_example_data_1_siRNA_screen_illuminated\';
-options.data.rawDataChannels = {'*DAPI.tif','*GFP.tif'};
+options.data.rawDataDir = 'D:\Projects\NEUBIAS\data\artificial\Week1_22123_unfocus\';
+options.data.rawDataChannels = {'*w1*.tif','*w2*.tif','*w4*.tif'};
 options.data.refactoredDataDir = 'd:\Projects\NEUBIAS\data\refactored\NEUBIAS_example_data_1_siRNA_screen\';
-options.data.correctedDataDir = 'd:\Projects\NEUBIAS\data\corrected\NEUBIAS_example_data_1_siRNA_screen_illuminated\';
-options.data.focusedDataDir = 'd:\Projects\NEUBIAS\data\focused\NEUBIAS_example_data_1_siRNA_screen\';
+options.data.correctedDataDir = 'd:\Projects\NEUBIAS\data\corrected\Week1_22123_unfocus\';
+options.data.focusedDataDir = 'd:\Projects\NEUBIAS\data\focused\Week1_22123_unfocus\';
 options.data.segmentedDataDir = [];
 options.data.featuresDir = [];
 options.data.statisticsDir = [];

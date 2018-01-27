@@ -14,6 +14,8 @@ switch options.segmentation.name
         for i=1:length(options.segmentation.commands)
             system(options.segmentation.commands{i});
         end
+    case 'cp1_identify_objects'
+        
     otherwise
         error('HCS:segmentation', 'No segmentation method %s is implemented', options.segmentation.name);
 end

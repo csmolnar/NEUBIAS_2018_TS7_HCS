@@ -1,0 +1,17 @@
+
+%textVAR10 = Discard embedded small objects (to avoid double segmentation)?
+%choiseVAR10 = No
+%choiseVAR10 = Yes
+DiscardEmbedded = char(handles.Settings.VariableValues{CurrentModuleNum,10});
+%inputtypeVAR10 = popupmenu
+
+%textVAR11 = Discard overlapping objects?
+%choiseVAR11 = No
+%choiseVAR11 = Yes
+DiscardOverlap = char(handles.Settings.VariableValues{CurrentModuleNum,11});
+%inputtypeVAR11 = popupmenu
+
+%textVAR12 = What do you want to call the outlines of the identified objects (optional)?
+%defaultVAR12 = Do not save
+%infotypeVAR12 = outlinegroup indep
+SaveOutlines = char(handles.Settings.VariableValues{CurrentModuleNum,12});

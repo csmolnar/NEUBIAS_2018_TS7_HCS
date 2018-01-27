@@ -1,0 +1,8 @@
+There was a problem running the image analysis. Sorry, it is unclear what the problem is. It would be wise to close the entire CellProfiler program in case something strange has happened to the settings. The output file may be unreliable as well. Matlab says the error is: Error using  ./ 
+Matrix dimensions must agree. in the MeasureMLGOCObjectAreaShape module, which is module #05 in the pipeline.
+
+Stack:
+MeasureMLGOCObjectAreaShape in D:\Dropbox\Projects\CL2M\CellProfiler_1.0.5122_MATLAB\Modules\MeasureMLGOCObjectAreaShape.m (378)
+AnalyzeImagesButton_Callback in D:\Dropbox\Projects\CL2M\CellProfiler_1.0.5122_MATLAB\CellProfiler.m (3829)
+gui_mainfcn in D:\Dropbox\Projects\CL2M\CellProfiler_1.0.5122_MATLAB\CellProfiler.m (5575)
+CellProfiler in D:\Dropbox\Projects\CL2M\CellProfiler_1.0.5122_MATLAB\CellProfiler.m (53)
