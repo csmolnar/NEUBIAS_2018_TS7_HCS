@@ -1,4 +1,4 @@
-function succFinished = evalCP(StartImage, EndImage, folderName, handles)
+function succFinished = evalCP(StartImage, EndImage, handles)
 
 BatchFilePrefix = 'Batch_';
 

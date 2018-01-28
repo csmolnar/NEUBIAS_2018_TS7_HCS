@@ -1,13 +1,15 @@
-function failedJobs = evalBatch(folderName, pipeLineName, poolSize, batchSize, numAttempts)
+function failedJobs = evalBatch(inputFolderName, outputFolderName, pipeLineName, poolSize, batchSize, numAttempts)
 
 disp('- Analysis: started -');
 
-prepareBatchAnalysis(pipeLineName, folderName);
+warning('off', 'all');
 
-delete(gcp('nocreate'));
-parpool(poolSize);
+prepareBatchAnalysis(pipeLineName, inputFolderName, outputFolderName);
 
-t = load([folderName 'CPBatchInfo.mat']);
+% delete(gcp('nocreate'));
+% parpool(poolSize);
+
+t = load([outputFolderName 'CPBatchInfo.mat']);
 
 loadImagesIndex = find(~cellfun('isempty', strfind(t.handles.Settings.ModuleNames, 'LoadImages')));
 
@@ -30,7 +32,7 @@ loopEnd = ceil((last-first+1)/batchSize);
 
 succFinishedJobs = zeros(loopEnd, 1);
 
-parfor i=1:loopEnd
+for i=1:loopEnd
         
     currentI = (i-1) * batchSize+first;
     
@@ -43,11 +45,11 @@ parfor i=1:loopEnd
 %         try
             if currentI +batchSize-1 > last
                 fprintf('%d->%d (attemp %d)\n', currentI, last, attempCounter);
-                status = feval(@evalCP, currentI, last, folderName, t.handles);
+                status = feval(@evalCP, currentI, last, t.handles);
                 
             else
                 fprintf('%d->%d (attemp %d)\n', currentI, currentI+batchSize-1, attempCounter);
-                status = feval(@evalCP, currentI, currentI+batchSize-1, folderName, t.handles);
+                status = feval(@evalCP, currentI, currentI+batchSize-1, t.handles);
                 
             end
             if status == 1
@@ -63,7 +65,7 @@ parfor i=1:loopEnd
             
 end
 
-save(fullfile(folderName, 'results.mat'), 't');
+% save(fullfile(folderName, 'results.mat'), 't');
 
 % checking for non-completed jobs and report them
 
@@ -75,8 +77,8 @@ else
     disp('Every job successfully finished!');
 end
 
-delete(gcp('nocreate'));
+% delete(gcp('nocreate'));
 
-warning on all;
+warning('on', 'all');
 
 disp('- Analysis: finished -');

@@ -1,17 +1,20 @@
-function prepareBatchAnalysis(pipeLineName, imageFolder)
+function prepareBatchAnalysis(pipeLineName, imageFolder, outFolder)
 
-load('temphandles.mat');
+p = mfilename('fullpath');
+[scriptPath,~,~] = fileparts(p);
 
-pipeLineName
-imageFolder
+load(fullfile(scriptPath,'temphandles.mat'),'handles');
 
-subFolderList = {'anal1', 'anal2', 'anal3', 'anal4', 'anal5', 'anal1_sec'};
+% pipeLineName
+% imageFolder
+
+subFolderList = {'anal1', 'anal2', 'anal3', 'anal4', 'anal5'};
 
 for i=1:length(subFolderList)
-    if exist(fullfile(imageFolder, subFolderList{i}), 'dir')
-        delete(fullfile(imageFolder, subFolderList{i},'*.png'));
+    if exist(fullfile(outFolder, subFolderList{i}), 'dir')
+        delete(fullfile(outFolder, subFolderList{i},'*.png'));
     else
-        mkdir(fullfile(imageFolder, subFolderList{i}));
+        mkdir(fullfile(outFolder, subFolderList{i}));
     end
 end
 
@@ -84,9 +87,9 @@ handles.Current.StartingImageSet = 1;
 
 % set I/O folders
 handles.Preferences.DefaultImageDirectory = imageFolder;
-handles.Preferences.DefaultOutputDirectory = imageFolder;
+handles.Preferences.DefaultOutputDirectory = outFolder;
 handles.Current.DefaultImageDirectory = imageFolder;
-handles.Current.DefaultOutputDirectory = imageFolder;
+handles.Current.DefaultOutputDirectory = outFolder;
 
 handles.Settings = load(pipeLineName);
 
@@ -105,4 +108,4 @@ else
     handles.Current.CurrentModuleNumber = num2str(length(handles.Settings.NumbersOfVariables));
 end
 
-save([imageFolder 'CPBatchInfo.mat'], 'handles');
+save([outFolder 'CPBatchInfo.mat'], 'handles');
