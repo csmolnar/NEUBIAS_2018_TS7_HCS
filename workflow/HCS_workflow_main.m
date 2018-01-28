@@ -1,5 +1,6 @@
 %% main file 
-% Run this pipeline
+%
+% Run this file
 % Please set "options.data.rawDataDir" variable in file
 % step_0_loadOptions.m file.
 % The raw data of plates required in the following structure:
@@ -20,28 +21,31 @@ addpath(genpath(HCSWorkflowPath));
 options.HCSWorkflowPath = HCSWorkflowPath;
 
 %% set options
+% setting all the necessary variables to personalize each component in the
+% workflow
 
 step_0_loadOptions();
+
+%!!! the following part does not work without running all the code above !!!
 
 %% refactoring image names
 % convert image names to the SSS structure if necessary
 
-% not double checked
+% under construction and bugfixing
 % step_0_1_refactorImages();
 
 
 %% flat field correction
-
-% a) CIDRE
-% b) mean image estimation
+% CIDRE illumination correction is implemented
 
 step_1_flatFieldCorrection();
 
 %% focus detection
+% creating one image from aquired images of different focus planes for each
+% field of view
 
-% a) adaptive focus
-% b) focus plane selection
-% c) extended depth of field?
+% a) adaptive focus: 'adaptive'
+% b) focus plane selection: 'bestplane'
 
 step_2_focusDetection();
 
@@ -79,16 +83,46 @@ step_4_segmentation_featureExtraction();
 %% annotation
 % 
 % To discover and analysis of extracted cell image data we use Advanced
-% Cell Classifier
+% Cell Classifier.
 % Source code is available here: http://www.cellclassifier.org/download/
-% Start the software by running startup.m in ACC source folder
+% Start the software by running startup.m in ACC source folder.
 %
 % You can find tutorial videos about getting started and all
-% functionalities here: http://www.cellclassifier.org/about-acc/
+% functionalities here: http://www.cellclassifier.org/about-acc/.
 % 
 % In case of any troubles with the preceding steps sample dataset is
-% available on the download page
-% 
+% available on the download page.
+%
+% Getting started with ACC
+%
+% The ACC file structure is the following:
+%
+% segmentedDir/
+%       plateName1/
+%           anal1/
+%               plateName1_wA01_s01*.ext
+%               plateName1_wA02_s01*.ext
+%               ...
+%           anal2/
+%               plateName1_wA01_s01*.txt
+%               plateName1_wA03_s01*.txt
+%               ...
+%           anal3/
+%               plateName1_wA01_s01*.ext
+%               plateName1_wA03_s01*.ext
+%               ...
+%
+% where anal1 folder contains the images for 'contour' view, anal3 folder
+% contains images for 'colour' (='not contour' view), and anal2 folder
+% contains text files for the extracted features for each cell line by
+% line (rows: cells, columns: features, column number 1 and 2 is for
+% centroid of the detected cells). anal2 folder also contains the file that
+% contains the names of features each in separate lines: featureNames.acc.
+% The content of anal2 folder can be exported by the exporttoacc modules of 
+% CellProfiler.
+%
+% In this workflow the 4_segmented folder should contain the data.
+%  
 % 6_annotations folder is created to store the already labelled cells by
 % Save project option.
 % 
