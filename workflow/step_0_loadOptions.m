@@ -90,7 +90,11 @@ options.focusDetection.name = 'bestplane';
 
 options.segmentation.name = 'cp1_identify_objects';
 % you can change the path of the pipeline
-options.segmentation.pipelineName = fullfile(options.HCSWorkflowPath,'segmentation','pipelines','pipe_batch_Carraher_20180127.mat');
+if ismac % I tried to work with a different segmentation method to avoid Mac error
+    options.segmentation.pipelineName = fullfile(options.HCSWorkflowPath,'segmentation','pipelines','pipe_batch_Carraher_nucleiExtensionForMac_20180128.mat.mat');
+else % the basic method that worked on windows and linux
+    options.segmentation.pipelineName = fullfile(options.HCSWorkflowPath,'segmentation','pipelines','pipe_batch_Carraher_20180127.mat');
+end
 options.segmentation.poolSize = 4;
 options.segmentation.batchSize = 4;
 options.features = {};
