@@ -68,6 +68,8 @@ step_2_focusDetection();
 %   - intensity features
 %   - texture features
 
+% ignore warning messages
+
 step_4_segmentation_featureExtraction();
 
 %% cell-level quality control
