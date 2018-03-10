@@ -1,1 +1,0 @@
-Run the main file HCS_workflow.m to run the automatic part of workflow.
