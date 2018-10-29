@@ -4,6 +4,9 @@ fprintf('Loading options... ');
 
 global options;
 
+% CHANGE THE FOLLOWING VARIABLES TO FIT THE WORKFLOW TO YOUR OWN DATA
+
+% regexps list for channels
 options.data.rawDataChannels = {'*ch1*','*ch2*','*ch4*'};
 
 % location of folder where the plates are saved
