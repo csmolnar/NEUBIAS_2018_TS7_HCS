@@ -53,7 +53,7 @@ Processing Toolbox, Statistics and Machine Learning Toolbox, and Bioinformatics 
 - Image data were selected from the Broad Bioimage Benchmark Collection ([BBBC021](https://data.broadinstitute.org/bbbc/BBBC021/))
 
 
-## References:
+## References
 
 - _Caie D. et. al._: High-Content Phenotypic Profiling of Drug Response Signatures across Distinct Cancer Cells [http://mct.aacrjournals.org/content/9/6/1913](http://mct.aacrjournals.org/content/9/6/1913)
 - _Caicedo C. et. al._: Data-analysis strategies for image-based cell profiling [https://www.nature.com/articles/nmeth.4397](https://www.nature.com/articles/nmeth.4397)
